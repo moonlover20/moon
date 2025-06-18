@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>팀 선택</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .team-btn {
+      display: block;
+      width: 220px;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #3498db;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .team-btn:hover {
+      background-color: #2980b9;
+    }
+    .observer-btn {
+      background-color: #2ecc71;
+    }
+    .observer-btn:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚔️ 팀을 선택하세요</h1>
+
+  <button class="team-btn" onclick="goToTeam('A')">A팀 입장</button>
+  <button class="team-btn" onclick="goToTeam('B')">B팀 입장</button>
+  <button class="team-btn" onclick="goToTeam('C')">C팀 입장</button>
+  <button class="team-btn" onclick="goToTeam('D')">D팀 입장</button>
+  <button class="team-btn" onclick="goToTeam('E')">E팀 입장</button>
+  <button class="team-btn" onclick="goToTeam('F')">F팀 입장</button>
+
+  <button class="team-btn observer-btn" onclick="goToTeam('G')">👁️ 관전자 화면</button>
+
+  <script>
+    const baseURL = "https://script.google.com/macros/s/AKfycbxYqYSoag57oU-CWu5_ZBC1B8j-U1T2LQEtd_IJMb5A135IxZs2tMhfN77M_Y55p8y4/exec";
+
+    function goToTeam(teamCode) {
+      window.location.href = `${baseURL}?team=${teamCode}`;
+    }
+  </script>
+</body>
+</html>
