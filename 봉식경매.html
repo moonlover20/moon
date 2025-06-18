@@ -53,6 +53,14 @@
   </style>
 </head>
 <body>
+<script>
+  const pw = prompt("비밀번호를 입력하세요:");
+  if(pw !== "7410"){
+    alert("접근 권한이 없습니다.");
+    window.location.href = "https://google.com";
+  }
+</script>
+
   <h1>🧩 팀 경매 웹앱 선택</h1>
 
   <a class="btn" href="https://script.google.com/macros/s/AKfycbx2B3P0eladvkU8KG3gistLYI1gRtwQ6oa0IYsCa5WWXksZBUSJm6LW2XHF5zKOkzHH/exec?team=A" target="_blank">각반팀 입장</a>
