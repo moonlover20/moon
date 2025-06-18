@@ -5,42 +5,34 @@
   <title>팀 경매 웹앱 선택</title>
   <style>
     body {
-      background: linear-gradient(to bottom right, #e0f7fa, #f5f7fa);
+      background: #f5f7fa;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 60px 20px;
+      padding-top: 80px;
     }
 
     h1 {
-      font-size: 36px;
+      font-size: 32px;
       margin-bottom: 40px;
       color: #2c3e50;
     }
 
-    .button-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
     .btn {
-      padding: 18px 24px;
+      display: inline-block;
+      margin: 10px;
+      padding: 16px 28px;
       font-size: 18px;
       border-radius: 12px;
       border: none;
       background-color: #3498db;
       color: white;
-      text-decoration: none;
       cursor: pointer;
-      transition: all 0.25s ease;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      transition: background 0.2s;
     }
 
     .btn:hover {
       background-color: #2980b9;
-      transform: translateY(-2px);
     }
 
     .observer {
@@ -61,43 +53,29 @@
   </style>
 </head>
 <body>
-
 <script>
-  // 팀별 비밀번호 매핑
-  const teamPasswords = {
-    A: "7410",
-    B: "7410",
-    C: "7410",
-    D: "7410",
-    E: "7410",
-    F: "7410",
-    G: "7410" // 관전자
-  };
-
-  const url = new URL(window.location.href);
-  const team = url.searchParams.get("team")?.toUpperCase();
-
-  if (team && teamPasswords[team]) {
-    const input = prompt(`${team}팀 비밀번호를 입력하세요:`);
-    if (input !== teamPasswords[team]) {
-      alert("비밀번호가 틀렸습니다.");
-      window.location.href = "https://google.com";
-    }
+  const pw = prompt("비밀번호를 입력하세요:");
+  if (pw !== "7410") {
+    alert("접근 권한이 없습니다.");
+    window.location.href = "https://google.com";
   }
 </script>
 
-<h1>🧩 팀 경매 웹앱 선택</h1>
+  <h1>🧩 팀 경매 웹앱 선택</h1>
 
-<div class="button-container">
-  <a class="btn" href="?team=A" target="_blank">각반팀 입장</a>
-  <a class="btn" href="?team=B" target="_blank">케터팀 입장</a>
-  <a class="btn" href="?team=C" target="_blank">러부엉팀 입장</a>
-  <a class="btn" href="?team=D" target="_blank">카르빌팀 입장</a>
-  <a class="btn" href="?team=E" target="_blank">아펠팀 입장</a>
-  <a class="btn" href="?team=F" target="_blank">대림팀 입장</a>
-  <a class="btn observer" href="?team=G" target="_blank">🔍 관전자 입장</a>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=A" target="_blank">각반팀 입장</a>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=B" target="_blank">케터팀 입장</a>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=C" target="_blank">러부엉팀 입장</a>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=D" target="_blank">카르빌팀 입장</a>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=E" target="_blank">아펠팀 입장</a>
+  <a class="btn" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=F" target="_blank">대림팀 입장</a>
+
+  <br><br>
+
+  <a class="btn observer" href="https://script.google.com/macros/s/AKfycbwCE4fCEYAm2R8FpA3lCMz0PPiGXqVAzagh9dTxGyGBgjJ0A-HcBXj6oDn_rSMSJs64/exec?team=G" target="_blank">🔍 관전자 입장</a>
+
+  <br><br>
+
   <a class="btn excel" href="https://docs.google.com/spreadsheets/d/1SD2bJMnT3Q_M7ovHgvDE0IhLXl4UKwf3JVYwZyWoRkI/edit?gid=0" target="_blank">📊 엑셀 입장</a>
-</div>
-
 </body>
 </html>
