@@ -3,74 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <title>팀 경매 웹앱 선택</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <style>
     body {
-      background: #f5f7fa;
+      min-height: 100vh;
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      background: 
+        linear-gradient(135deg, #f5f7fa 60%, #e1eaff 100%),
+        url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+      background-blend-mode: lighten;
       text-align: center;
-      padding-top: 80px;
+      animation: fadeIn 0.9s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .banner {
+      background: #fbc531;
+      color: #222;
+      padding: 18px 0 12px 0;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-radius: 0 0 36px 36px;
+      box-shadow: 0 8px 24px rgba(251,197,49,0.18);
+      margin-bottom: 35px;
     }
     h1 {
-      font-size: 32px;
-      margin-bottom: 40px;
+      font-size: 35px;
+      margin-bottom: 16px;
       color: #2c3e50;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    }
+    .desc {
+      color: #6c7a89;
+      font-size: 16.5px;
+      margin-bottom: 38px;
+    }
+    .btn-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      max-width: 660px;
+      margin: 0 auto 28px auto;
     }
     .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 16px 28px;
+      min-width: 150px;
+      margin: 0;
+      padding: 18px 0;
       font-size: 18px;
-      border-radius: 12px;
+      border-radius: 20px;
       border: none;
-      background-color: #3498db;
+      background: linear-gradient(90deg,#3498db 80%,#6eb6e7 100%);
       color: white;
       cursor: pointer;
       text-decoration: none;
-      transition: background 0.2s;
+      font-weight: 500;
+      box-shadow: 0 4px 14px rgba(52,152,219,0.11);
+      transition: transform 0.14s, box-shadow 0.15s, background 0.18s;
+      margin-bottom: 8px;
+      outline: none;
+      display: block;
     }
-    .btn:hover {
-      background-color: #2980b9;
+    .btn:hover, .btn:focus {
+      background: linear-gradient(90deg,#2980b9 80%,#6eb6e7 100%);
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 8px 18px rgba(52,152,219,0.22);
     }
     .observer {
-      background-color: #2ecc71;
+      background: linear-gradient(90deg,#2ecc71 70%,#77ddbb 100%);
+      color: #fff;
     }
-    .observer:hover {
-      background-color: #27ae60;
+    .observer:hover, .observer:focus {
+      background: linear-gradient(90deg,#27ae60 80%,#77ddbb 100%);
     }
     .excel {
-      background-color: #f39c12;
+      background: linear-gradient(90deg,#f39c12 80%,#ffe082 100%);
+      color: #333;
     }
-    .excel:hover {
-      background-color: #e67e22;
+    .excel:hover, .excel:focus {
+      background: linear-gradient(90deg,#e67e22 80%,#ffe082 100%);
+      color: #222;
+    }
+    /* 모바일 대응 */
+    @media (max-width: 600px) {
+      .btn-wrap {
+        flex-direction: column;
+        gap: 13px;
+        max-width: 96vw;
+      }
+      .btn {
+        min-width: 0;
+        width: 100%;
+        font-size: 17px;
+        padding: 15px 0;
+      }
+      .banner { font-size: 18px; padding: 14px 0 10px 0; }
+      h1 { font-size: 24px; }
+    }
+
+    /* 모달 스타일 */
+    .modal-bg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(44,62,80,0.23);
+      z-index: 9999;
+    }
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 32px rgba(44,62,80,0.13);
+      padding: 32px 28px 22px 28px;
+      text-align: center;
+      min-width: 260px;
+      max-width: 94vw;
+      animation: fadeIn 0.6s;
+    }
+    .modal label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 17px;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+    .modal input {
+      font-size: 17px;
+      padding: 8px 14px;
+      border-radius: 9px;
+      border: 1px solid #bbb;
+      outline: none;
+      margin-bottom: 13px;
+      width: 88%;
+    }
+    .modal button {
+      margin-top: 2px;
+      font-size: 16px;
+      padding: 8px 22px;
+      border-radius: 9px;
+      border: none;
+      background: #3498db;
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .modal button:hover {
+      background: #2980b9;
+    }
+    .modal .err {
+      color: #e74c3c;
+      margin-bottom: 8px;
+      font-size: 15px;
     }
   </style>
 </head>
 <body>
+  <div class="banner">봉찐막대에 오신 걸 환영합니다!</div>
+  <h1>🧩 팀 경매 웹앱 선택</h1>
+  <div class="desc">
+    원하는 팀을 선택해 입장하세요.<br>
+    (비밀번호가 필요합니다)
+  </div>
 
-<script>
-  const pw = prompt("비밀번호를 입력하세요:");
-  if (pw !== "7410") {
-    alert("접근 권한이 없습니다.");
-    window.location.href = "https://google.com";
-  }
-</script>
+  <div class="btn-wrap">
+    <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=A" target="_blank">각반팀 입장</a>
+    <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=B" target="_blank">케터팀 입장</a>
+    <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=C" target="_blank">러부엉팀 입장</a>
+    <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=D" target="_blank">카르빌팀 입장</a>
+    <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=E" target="_blank">아펠팀 입장</a>
+    <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=F" target="_blank">대림팀 입장</a>
+  </div>
+  <div class="btn-wrap">
+    <a class="btn observer" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=G" target="_blank">🔍 관전자 입장</a>
+    <a class="btn excel" href="https://docs.google.com/spreadsheets/d/1SD2bJMnT3Q_M7ovHgvDE0IhLXl4UKwf3JVYwZyWoRkI/edit?gid=0" target="_blank">📊 엑셀 입장</a>
+  </div>
 
-<h1>🧩 팀 경매 웹앱 선택</h1>
+  <!-- 비밀번호 모달 -->
+  <div class="modal-bg" id="pwModalBg">
+    <div class="modal">
+      <form id="pwForm" autocomplete="off" onsubmit="return false;">
+        <label for="pwInput">비밀번호를 입력하세요</label>
+        <input type="password" id="pwInput" maxlength="12" autofocus>
+        <div id="pwErr" class="err" style="display:none;">비밀번호가 틀렸습니다.</div>
+        <button type="submit">입장</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    // 비밀번호 모달 동작
+    const modalBg = document.getElementById('pwModalBg');
+    const pwForm = document.getElementById('pwForm');
+    const pwInput = document.getElementById('pwInput');
+    const pwErr = document.getElementById('pwErr');
 
-<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=A" target="_blank">각반팀 입장</a>
-<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=B" target="_blank">케터팀 입장</a>
-<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=C" target="_blank">러부엉팀 입장</a>
-<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=D" target="_blank">카르빌팀 입장</a>
-<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=E" target="_blank">아펠팀 입장</a>
-<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=F" target="_blank">대림팀 입장</a>
+    pwForm.addEventListener('submit', function() {
+      if (pwInput.value.trim() === "7410") {
+        modalBg.style.display = "none";
+        document.body.style.overflow = "auto";
+      } else {
+        pwErr.style.display = "block";
+        pwInput.value = "";
+        pwInput.focus();
+      }
+    });
 
-<br><br>
+    pwInput.addEventListener('keydown', function(e){
+      if (pwErr.style.display === "block") pwErr.style.display = "none";
+      if(e.key === "Enter"){
+        pwForm.dispatchEvent(new Event('submit'));
+      }
+    });
 
-<a class="btn observer" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=G" target="_blank">🔍 관전자 입장</a>
-
-<br><br>
-
-<a class="btn excel" href="https://docs.google.com/spreadsheets/d/1SD2bJMnT3Q_M7ovHgvDE0IhLXl4UKwf3JVYwZyWoRkI/edit?gid=0" target="_blank">📊 엑셀 입장</a>
-
+    // 모달 오픈 시 스크롤 막기
+    window.onload = function() {
+      document.body.style.overflow = "hidden";
+      pwInput.focus();
+    };
+  </script>
 </body>
 </html>
