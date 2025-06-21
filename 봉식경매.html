@@ -5,105 +5,72 @@
   <title>팀 경매 웹앱 선택</title>
   <style>
     body {
-      font-family: 'Pretendard', 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
-      background: url('/mnt/data/e0a91961-c8a8-4e1b-bd2f-6240d3f13933.png') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      min-height: 100vh;
-      box-sizing: border-box;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding-top: 70px;
-      backdrop-filter: blur(1.5px) brightness(0.96);
-      background: rgba(250,250,250,0.25);
+      background: #f5f7fa;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 80px;
     }
     h1 {
-      font-size: 38px;
-      margin-bottom: 42px;
-      color: #34495e;
-      letter-spacing: 2px;
-      font-family: 'Cafe24SsurroundAir', 'Segoe UI', sans-serif;
-      font-weight: 900;
-      text-shadow: 1px 2px 8px rgba(80,80,80,0.08);
-      background: rgba(255,255,255,0.50);
-      border-radius: 18px;
-      padding: 12px 32px 7px 32px;
-      display: inline-block;
-    }
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-bottom: 30px;
-      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #2c3e50;
     }
     .btn {
       display: inline-block;
-      min-width: 130px;
-      margin: 8px 0;
-      padding: 18px 32px;
-      font-size: 20px;
-      font-family: 'Pretendard', 'Segoe UI', sans-serif;
-      border-radius: 14px;
+      margin: 10px;
+      padding: 16px 28px;
+      font-size: 18px;
+      border-radius: 12px;
       border: none;
       background-color: #3498db;
       color: white;
       cursor: pointer;
-      font-weight: bold;
-      text-shadow: 1px 1px 7px rgba(10,30,90,0.08);
-      box-shadow: 0 4px 14px rgba(30,85,160,0.08);
-      transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+      text-decoration: none;
+      transition: background 0.2s;
     }
     .btn:hover {
-      background-color: #217dbb;
-      transform: translateY(-2px) scale(1.045);
-      box-shadow: 0 8px 24px rgba(30,85,160,0.15);
+      background-color: #2980b9;
     }
     .observer {
-      background: #26c281;
-      color: white;
-      margin: 0 0 15px 0;
-      box-shadow: 0 4px 16px rgba(38,194,129,0.09);
+      background-color: #2ecc71;
     }
     .observer:hover {
-      background: #1b9e67;
+      background-color: #27ae60;
     }
     .excel {
-      background: #ffb12b;
-      color: #fff;
-      margin: 0 0 10px 0;
-      box-shadow: 0 4px 16px rgba(255,177,43,0.09);
+      background-color: #f39c12;
     }
     .excel:hover {
-      background: #e68a00;
-    }
-    @media (max-width: 650px) {
-      .btn-row { flex-direction: column; gap: 12px; }
-      .btn { width: 85vw; min-width: 0; padding: 14px 0; font-size: 18px;}
-      h1 { font-size: 28px; padding: 8px 12px;}
-      .container { padding-top: 40px; }
+      background-color: #e67e22;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🧩 팀 경매 웹앱 선택</h1>
-    <div class="btn-row">
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=A" target="_blank">각반팀 입장</a>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=B" target="_blank">케터팀 입장</a>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=C" target="_blank">러부엉팀 입장</a>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=D" target="_blank">카르빌팀 입장</a>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=E" target="_blank">아펠팀 입장</a>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=F" target="_blank">대림팀 입장</a>
-    </div>
-    <a class="btn observer" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=G" target="_blank">🔍 관전자 입장</a>
-    <br>
-    <a class="btn excel" href="https://docs.google.com/spreadsheets/d/1SD2bJMnT3Q_M7ovHgvDE0IhLXl4UKwf3JVYwZyWoRkI/edit?gid=0" target="_blank">📊 엑셀 입장</a> 
-  </div>
+
+<script>
+  const pw = prompt("비밀번호를 입력하세요:");
+  if (pw !== "7410") {
+    alert("접근 권한이 없습니다.");
+    window.location.href = "https://google.com";
+  }
+</script>
+
+<h1>🧩 팀 경매 웹앱 선택</h1>
+
+<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=A" target="_blank">각반팀 입장</a>
+<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=B" target="_blank">카테팀 입장</a>
+<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=C" target="_blank">러부엽팀 입장</a>
+<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=D" target="_blank">카르빌팀 입장</a>
+<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=E" target="_blank">아펠팀 입장</a>
+<a class="btn" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=F" target="_blank">대림팀 입장</a>
+
+<br><br>
+
+<a class="btn observer" href="https://script.google.com/macros/s/AKfycbylhfMGuotxYFS1GAnUYjwQTPV5cLUn7jO6JxITA8HxWnPRl1mgvBPOCkRiwosrJ8t5/exec?team=G" target="_blank">🔍 관전자 입장</a>
+
+<br><br>
+
+<a class="btn excel" href="https://docs.google.com/spreadsheets/d/1SD2bJMnT3Q_M7ovHgvDE0IhLXl4UKwf3JVYwZyWoRkI/edit?gid=0" target="_blank">📊 엘셀 입장</a>
+
 </body>
 </html>
